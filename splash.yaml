@@ -1,0 +1,10 @@
+flutter_native_splash:
+  color: '#8A20D5'
+  image: assets/images/weather_logo.png
+  android: true
+  ios: true
+
+  android_12:
+    color: '#8A20D5'
+    image: assets/images/android12+_light_logo.png
+
