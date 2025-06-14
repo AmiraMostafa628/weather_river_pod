@@ -1,12 +1,17 @@
 
+https://github.com/user-attachments/assets/db9e7e23-cdbf-440e-9fb7-7cad461022ee
 
-https://github.com/user-attachments/assets/6ff708ee-268d-4820-9591-20502a0030bb
 
 # weather_app
+A simple and intuitive weather app that displays real-time weather data, forecasts, and location-based updates using a clean Flutter UI
 
-A new Flutter project.
+## Features
+- Clean Architecture structured with domain, data, and presentation layers.
+- Riverpod for robust and scalable state management.
+- RESTful API integration with clear separation of concerns via repositories and datasources.
+- Efficient local caching using Hive and Shared Preferences.
+- Dynamic system theme detection with seamless dark/light mode adaptation.
 
-## Getting Started
 
 This project is a starting point for a Flutter application.
 
