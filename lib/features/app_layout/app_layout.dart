@@ -5,8 +5,7 @@ import 'package:weather_app/features/weather/presentation/manager/theme_notifier
 import 'package:weather_app/features/weather/presentation/pages/home/home_view.dart';
 
 class AppLayout extends ConsumerStatefulWidget {
-  final bool isDark;
-  const AppLayout({super.key,required this.isDark});
+  const AppLayout({super.key});
 
   @override
   ConsumerState<AppLayout> createState() => _AppLayoutState();
@@ -18,7 +17,7 @@ class _AppLayoutState extends ConsumerState<AppLayout> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_){
       theme = ref.read(themeProvider);
-      theme.changeThemeMode(cacheValue: widget.isDark);
+      theme.initCache();
     });
     super.initState();
   }

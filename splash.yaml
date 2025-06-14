@@ -1,10 +1,16 @@
 flutter_native_splash:
   color: '#8A20D5'
+  color_dark: '#004B75'
   image: assets/images/weather_logo.png
+  image_dark: assets/images/weather_logo.png
+
+
   android: true
   ios: true
 
   android_12:
     color: '#8A20D5'
+    color_dark: '#004B75'
     image: assets/images/android12+_light_logo.png
+    image_dark: assets/images/android12+_dark_logo.png
 

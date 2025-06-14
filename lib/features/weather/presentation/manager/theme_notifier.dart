@@ -9,19 +9,23 @@ class ThemeNotifier extends ChangeNotifier{
   ThemeMode _themeMode = ThemeMode.system;
   ThemeMode get themeMode => _themeMode;
 
-  bool _isDark = false;
-  bool get isDark => _isDark;
-
-  void changeThemeMode({bool? cacheValue}) async{
-    if(cacheValue != null){
-      _isDark = cacheValue;
+  void initCache() async{
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    bool? isDark =  sharedPreferences.getBool("isDark");
+    if(isDark !=null){
+      _themeMode = isDark? ThemeMode.dark : ThemeMode.light;
     }
     else{
-      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-      _isDark = !_isDark;
-      sharedPreferences.setBool("isDark", _isDark);
+      _themeMode = ThemeMode.system;
     }
-    _themeMode = _isDark? ThemeMode.dark : ThemeMode.light;
+    notifyListeners();
+  }
+
+  void changeThemeMode() async{
+    _themeMode = _themeMode == ThemeMode.dark ? ThemeMode.light :ThemeMode.dark;
+    bool isDark = _themeMode == ThemeMode.dark;
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setBool("isDark", isDark);
     notifyListeners();
   }
 }
