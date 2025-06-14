@@ -4,12 +4,26 @@ import 'package:weather_app/core/resources/theme_manager.dart';
 import 'package:weather_app/features/weather/presentation/manager/theme_notifier.dart';
 import 'package:weather_app/features/weather/presentation/pages/home/home_view.dart';
 
-class AppLayout extends ConsumerWidget {
-  const AppLayout({super.key,required this.isDark});
+class AppLayout extends ConsumerStatefulWidget {
   final bool isDark;
+  const AppLayout({super.key,required this.isDark});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  ConsumerState<AppLayout> createState() => _AppLayoutState();
+}
+
+class _AppLayoutState extends ConsumerState<AppLayout> {
+  late final ThemeNotifier theme;
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      theme = ref.read(themeProvider);
+      theme.changeThemeMode(cacheValue: widget.isDark);
+    });
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ref.watch(themeProvider).themeMode,
@@ -19,6 +33,7 @@ class AppLayout extends ConsumerWidget {
     );
   }
 }
+
 
 
 
