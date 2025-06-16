@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:weather_app/core/api/api_constance.dart';
 
@@ -7,7 +6,6 @@ class ApiClient{
  final Dio _dio;
 
   ApiClient(): _dio =Dio(
-
     BaseOptions(
       headers: {
         'Content-Type':'application/json',

@@ -8,8 +8,8 @@ class AppTheme{
     scaffoldBackgroundColor: ColorManager.lightThemeScaffoldColor,
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: ColorManager.lightThemeContainerColor,
-        statusBarBrightness: Brightness.dark
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness:  Brightness.dark,
       )
     ),
     colorScheme: ColorScheme(
@@ -34,8 +34,8 @@ class AppTheme{
       scaffoldBackgroundColor: ColorManager.darkThemeScaffoldColor,
       appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: ColorManager.darkThemePrimaryColor,
-              statusBarBrightness: Brightness.light
+            statusBarBrightness: Brightness.dark,
+            statusBarIconBrightness:  Brightness.light,
 
           )
       ),
