@@ -9,7 +9,7 @@ A simple and intuitive weather app that displays real-time weather data, forecas
 - Clean Architecture structured with domain, data, and presentation layers.
 - Riverpod for robust and scalable state management.
 - RESTful API integration with clear separation of concerns via repositories and datasources.
-- Efficient local caching using Hive and Shared Preferences.
+- Efficient local caching using Shared Preferences.
 - Dynamic system theme detection with seamless dark/light mode adaptation.
 
 
